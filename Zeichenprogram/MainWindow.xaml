@@ -1,0 +1,36 @@
+﻿<Window x:Class="Zeichenprogram.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zeichenprogram"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="{x:Static SystemColors.ControlBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto" ></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"  ></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Cursor="">
+            <InkCanvas  Grid.Column="0" Grid.Row="0" Margin="11" Background="White" Cursor="Pen" />
+        </ScrollViewer>
+        
+        <GridSplitter Grid.Column="2" Grid.RowSpan="2" ResizeBehavior="PreviousAndNext" Width="5" Cursor="" />
+        <ScrollViewer Grid.Column="2">
+            <StackPanel>
+                <Label Margin="5" Content="Stärke"></Label>
+                <Slider x:Name="brushSlider"> </Slider>
+                
+            </StackPanel>
+        
+        </ScrollViewer>
+        <TextBlock  x:Name="Textblock" Text="Status Text" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Height="15"></TextBlock>
+    </Grid>
+</Window>
